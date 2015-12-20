@@ -8,7 +8,55 @@ html {
 
 body {
   height: 100%;
-  font-family: 'sans-serif';
-  font-size: 1em;
+  font-size: $base-font-size;
+  font-family: $main-font;
   padding-bottom: $spacing-unit;
+}
+
+
+/***
+
+header
+
+***/
+
+header.header {
+  padding: $spacing-unit 0;
+  position: fixed;
+  z-index: 2;
+  background-color: #fdfdfd;
+  width: 100%;
+}
+
+h1.name {
+  font-size: $big-font-size;
+  width: 60%;
+  margin: auto;
+}
+
+/***
+
+container
+
+***/
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+/***
+
+images
+
+***/
+
+figure {
+  padding: $spacing-unit;
+}
+
+.photo {
+  max-width: 800;
+  max-height: 600;
 }
