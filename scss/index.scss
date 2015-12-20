@@ -43,7 +43,7 @@ container
 .container {
   width: 80%;
   margin: 0 auto;
-  padding: 0 $spacing-unit;
+  padding: $spacing-unit 0;
 }
 
 /***
@@ -52,11 +52,8 @@ images
 
 ***/
 
-figure {
-  padding: $spacing-unit;
-}
-
-.photo {
-  max-width: 800;
-  max-height: 600;
+img {
+  width: $img-width;
+  margin: 0 auto;
+  padding: $spacing-unit 0;
 }
