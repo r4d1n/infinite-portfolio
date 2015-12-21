@@ -1,15 +1,29 @@
 'use strict';
 
-// scss
+// bundle scss
 require('../scss/index.scss');
 
 console.log('this is javascript')
 
-function render() {
+render(getImages())
+
+export function getImages() {
   let i = 20;
+  let sources = []
 
   while (i--) {
     let src = i % 3 === 0 ? 'https://placekitten.com/700/1000' : 'https://placekitten.com/1000/700'
+    sources.push(src)
+  }
+
+  return sources
+}
+
+export function render(sources) {
+  let i = sources.length;
+
+  while (i--) {
+    let src = sources[i]
 
     let showcase = document.getElementById('showcase')
 
@@ -19,7 +33,13 @@ function render() {
     img.classList.add('photo')
     // figure.appendChild(img)
     showcase.appendChild(img)
+
+    regulate()
   }
+
 }
 
-render()
+export function regulate() {
+  let images = document.querySelectorAll('.photo')
+  console.log(images)
+}

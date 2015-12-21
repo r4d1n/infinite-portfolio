@@ -1,9 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var entry = process.env.NODE_ENV === 'test' ? './test/spec.js' : './js/index.js'
+
 module.exports = {
   cache: true,
-  entry: './js/index.js',
+  entry: './test/spec.js',
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: 'dist/',
@@ -18,4 +20,5 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' }
     ]
   },
+  devtool: 'inline-source-map'
 };
