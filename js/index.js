@@ -20,21 +20,23 @@ export function getImages() {
 }
 
 export function render(sources) {
-  let i = sources.length;
+  let i = sources.length
 
-  while (i--) {
-    let src = sources[i]
+  let showcase = document.getElementById('showcase')
 
-    let showcase = document.getElementById('showcase')
+  if (showcase) {
+    while (i--) {
+      let src = sources[i]
+      // let figure = document.createElement('figure')
+      let img = document.createElement('img')
 
-    // let figure = document.createElement('figure')
-    let img = document.createElement('img')
-    img.src = src;
-    img.classList.add('photo')
-    // figure.appendChild(img)
-    showcase.appendChild(img)
+      img.src = src;
+      img.classList.add('photo')
+      // figure.appendChild(img)
+      showcase.appendChild(img)
 
-    regulate()
+      regulate()
+    }
   }
 
 }

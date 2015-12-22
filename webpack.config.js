@@ -5,10 +5,10 @@ var entry = process.env.NODE_ENV === 'test' ? './test/spec.js' : './js/index.js'
 
 module.exports = {
   cache: true,
-  entry: './test/spec.js',
+  entry: entry,
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: 'dist/',
+    path: '',
+    publicPath: '/',
     filename: 'bundle.js',
     chunkFilename: '[chunkhash].js'
   },
