@@ -3,23 +3,27 @@
 // bundle scss
 require('../scss/index.scss');
 
-console.log('this is javascript')
+const BUCKET_DOMAIN = 'http://photo.r4d1n.net.s3-website-us-west-2.amazonaws.com'
 
-render(getImages())
+const imgs = [
+  'yahoo.jpg',
+  'tulips.jpg',
+  'triplex-portrait.jpg',
+  'carwash-pattern.jpg',
+  'succulent.jpg',
+  'market-nest.jpg',
+  'port-coop.jpg',
+  'cliff-hose.jpg',
+  'grubhub.jpg',
+  'doorway-portrait.jpg',
+  'temescal-tree.jpg',
+].reverse().map((name) => `${BUCKET_DOMAIN}/images/${name}`)
 
-export function getImages() {
-  let i = 20;
-  let sources = []
+render(imgs)
 
-  while (i--) {
-    let src = i % 3 === 0 ? 'https://placekitten.com/700/1000' : 'https://placekitten.com/1000/700'
-    sources.push(src)
-  }
+function render(sources) {
 
-  return sources
-}
-
-export function render(sources) {
+  console.log(sources)
   let i = sources.length
 
   let showcase = document.getElementById('showcase')
@@ -27,13 +31,14 @@ export function render(sources) {
   if (showcase) {
     while (i--) {
       let src = sources[i]
-      // let figure = document.createElement('figure')
+      let wrapper = document.createElement('div')
       let img = document.createElement('img')
 
       img.src = src;
       img.classList.add('photo')
-      // figure.appendChild(img)
-      showcase.appendChild(img)
+      wrapper.classList.add('wrapper')
+      wrapper.appendChild(img)
+      showcase.appendChild(wrapper)
 
       regulate()
     }
@@ -41,7 +46,7 @@ export function render(sources) {
 
 }
 
-export function regulate() {
+function regulate() {
   let images = document.querySelectorAll('.photo')
   console.log(images)
 }

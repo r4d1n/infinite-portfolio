@@ -1,11 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var entry = process.env.NODE_ENV === 'test' ? './test/spec.js' : './js/index.js'
-
 module.exports = {
   cache: true,
-  entry: entry,
+  entry: './js/index.js',
   output: {
     path: '',
     publicPath: '/',

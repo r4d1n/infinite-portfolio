@@ -4,8 +4,7 @@
   "description": "",
   "main": "js/index.js",
   "scripts": {
-    "start": "webpack-dev-server && http-server",
-    "test": "NODE_ENV=test webpack && mocha -u tdd dist/bundle.js"
+    "start": "webpack-dev-server && http-server"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,7 @@
     "karma-mocha": "^0.2.1",
     "mocha": "^2.3.4",
     "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0"
+    "style-loader": "^0.13.0",
+    "superagent": "^1.6.1"
   }
 }

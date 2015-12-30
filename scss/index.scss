@@ -31,7 +31,11 @@ header.header {
 h1.name {
   font-size: $big-font-size;
   width: 60%;
+  padding: 0 $spacing-unit * 2;
   margin: auto;
+  @media screen and (max-width: 450px) {
+    width: 80%;
+  }
 }
 
 /***
@@ -43,7 +47,13 @@ container
 .container {
   width: 80%;
   margin: 0 auto;
+  max-width: $img-max-width;
   padding: $spacing-unit 0;
+  margin: 0 auto;
+
+  @media screen and (max-width: 450px) {
+    width: 300px;
+  }
 }
 
 /***
@@ -53,7 +63,11 @@ images
 ***/
 
 img {
-  width: $img-width;
+  width: 500px;
   margin: 0 auto;
   padding: $spacing-unit 0;
+  display: inline-block;
+  @media screen and (max-width: 450px) {
+    width: 300px;
+  }
 }
