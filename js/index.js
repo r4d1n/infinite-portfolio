@@ -3,21 +3,19 @@
 // bundle scss
 require('../scss/index.scss');
 
-const BUCKET_DOMAIN = 'http://photo.r4d1n.net.s3-website-us-west-2.amazonaws.com'
-
 const imgs = [
-  'yahoo.jpg',
-  'tulips.jpg',
-  'triplex-portrait.jpg',
-  'carwash-pattern.jpg',
-  'succulent.jpg',
-  'market-nest.jpg',
-  'port-coop.jpg',
-  'cliff-hose.jpg',
-  'grubhub.jpg',
-  'doorway-portrait.jpg',
-  'temescal-tree.jpg',
-].reverse().map((name) => `${BUCKET_DOMAIN}/images/${name}`)
+  'yahoo',
+  'tulips',
+  'triplex-portrait',
+  'carwash-pattern',
+  'succulent',
+  'market-nest',
+  'port-coop',
+  'cliff-hose',
+  'grubhub',
+  'doorway-portrait',
+  'temescal-tree',
+].reverse().map((name) => `/images/${name}.jpg`)
 
 render(imgs)
 
